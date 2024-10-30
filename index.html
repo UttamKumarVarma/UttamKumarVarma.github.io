@@ -142,20 +142,19 @@
 		</nav>
 	
 		<style>
-			/* Ensure navbar items align well on all screen sizes */
+			/* Consistent margin between navbar items */
+			.navbar-nav .nav-item {
+				margin: 0 4px; /* Adjust for closer spacing */
+			}
+	
+			/* Prevent items from stacking on mobile */
+			.navbar-collapse {
+				flex-direction: row !important;
+			}
+	
 			.navbar-nav {
 				display: flex;
 				flex-wrap: nowrap;
-			}
-	
-			.nav-item {
-				margin: 0 10px;
-			}
-	
-			@media (max-width: 768px) {
-				.navbar-nav {
-					flex-direction: column;
-				}
 			}
 		</style>
 	</div>
