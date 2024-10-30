@@ -119,61 +119,47 @@
 
 
 	<div class="container">
-		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target"
-			id="ftco-navbar">
-			<div class="container" style="margin-left: 70px;"> <!-- Move this container 20px to the right -->
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+			<div class="container d-flex align-items-center justify-content-between" style="padding: 0 15px;">
 				<a class="navbar-brand" href="index.html">Uttam Kumar Varma Vummididevu</a>
 				<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
-					data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false"
-					aria-label="Toggle navigation">
+					data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="oi oi-menu"></span> Menu
 				</button>
 			</div>
-
+	
 			<div class="collapse navbar-collapse" id="ftco-nav">
-				<div class="container" style="margin-left: 150px; padding: 0;"> <!-- Keep the right margin -->
-					<ul class="navbar-nav nav mr-auto flex-nowrap" style="margin: 0; padding: 0;">
-						<!-- Remove margin and padding -->
-						<li class="nav-item" style="margin: 0 5px;"> <!-- Reduce margin between items -->
-							<a href="#home-section" class="nav-link" style="padding: 5px 10px;"><span>Home</span></a>
-						</li>
-						<li class="nav-item" style="margin: 0 5px;">
-							<a href="#about-section" class="nav-link" style="padding: 5px 10px;"><span>About</span></a>
-						</li>
-						<li class="nav-item" style="margin: 0 5px;">
-							<a href="#experience-section" class="nav-link"
-								style="padding: 5px 10px;"><span>Experience</span></a>
-						</li>
-						<li class="nav-item" style="margin: 0 5px;">
-							<a href="#education-section" class="nav-link"
-								style="padding: 5px 10px;"><span>Education</span></a>
-						</li>
-						<li class="nav-item" style="margin: 0 5px;">
-							<a href="#project-section" class="nav-link"
-								style="padding: 5px 10px;"><span>Projects</span></a>
-						</li>
-						<li class="nav-item" style="margin: 0 5px;">
-							<a href="#certifications-section" class="nav-link"
-								style="padding: 5px 10px;"><span>Certifications</span></a>
-						</li>
-						<li class="nav-item" style="margin: 0 5px;">
-							<a href="#contact-section" class="nav-link"
-								style="padding: 5px 10px;"><span>Contact</span></a>
-						</li>
-					</ul>
-				</div>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+					<li class="nav-item"><a href="#experience-section" class="nav-link"><span>Experience</span></a></li>
+					<li class="nav-item"><a href="#education-section" class="nav-link"><span>Education</span></a></li>
+					<li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
+					<li class="nav-item"><a href="#certifications-section" class="nav-link"><span>Certifications</span></a></li>
+					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+				</ul>
 			</div>
-
-
-
-			<style>
-				#ftco-nav {
-					margin-left: -20px;
-					/* Adjust this value as necessary */
-				}
-			</style>
 		</nav>
+	
+		<style>
+			/* Ensure navbar items align well on all screen sizes */
+			.navbar-nav {
+				display: flex;
+				flex-wrap: nowrap;
+			}
+	
+			.nav-item {
+				margin: 0 10px;
+			}
+	
+			@media (max-width: 768px) {
+				.navbar-nav {
+					flex-direction: column;
+				}
+			}
+		</style>
 	</div>
+	
 
 
 	<style>
@@ -1104,7 +1090,7 @@
 			<div class="col-md-6">
 				<div class="resume-wrap ftco-animate">
 					<span class="date">2016-2020</span>
-					<h4>Bachelor of Technology in Electronics and Instrumentation Engineering</h4>
+					<h4>B.Tech in Electronics and Instrumentation Engineering</h4>
 					<span class="position">Adikavi Nannaya University</span>
 					<p class="mt-4">Grade: 7.66/10.0</p>
 				</div>
