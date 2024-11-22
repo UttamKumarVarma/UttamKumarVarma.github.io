@@ -156,39 +156,40 @@
 				display: flex;
 				flex-wrap: nowrap;
 			}
+	
+			/* Ensure the navbar items stay in one row */
+			.navbar-nav {
+				white-space: nowrap;
+			}
+	
+			.nav-item {
+				margin: 0 10px;
+			}
+	
+			.navbar {
+				overflow: hidden;
+			}
+	
+			@media (max-width: 768px) {
+				.navbar-nav {
+					flex-direction: column;
+					align-items: center; /* Center-align navbar items */
+				}
+	
+				.navbar-nav .nav-item {
+					margin: 8px 0; /* Add some space between items */
+				}
+	
+				.btn-fixed-size {
+					width: 100%; /* Make buttons full width on mobile */
+				}
+			}
 		</style>
 	</div>
 	
-
-
-	<style>
-		/* Ensure the navbar items stay in one row */
-		.navbar-nav {
-			white-space: nowrap;
-			/* Prevent wrapping */
-		}
-
-		.nav-item {
-			margin: 0 10px;
-			/* Adjust margin between items as needed */
-		}
-
-		.navbar {
-			overflow: hidden;
-			/* Prevent overflow */
-		}
-
-		@media (max-width: 768px) {
-			.navbar-nav {
-				flex-direction: column;
-				/* Stack items vertically on small screens */
-			}
-		}
-	</style>
-
 	<section id="home-section" class="hero">
-		<div class="home-slider  owl-carousel">
-			<div class="slider-item ">
+		<div class="home-slider owl-carousel">
+			<div class="slider-item">
 				<div class="overlay"></div>
 				<div class="container">
 					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
@@ -200,25 +201,23 @@
 								style="background-image: url(images/bg_1.png); background-size: cover; background-position: center; width: 80%; height: 80%; max-width: 500px;">
 							</div>
 						</div>
-
-						<div class="one-forth d-flex  align-items-center ftco-animate"
-							data-scrollax=" properties: { translateY: '70%' }">
+	
+						<div class="one-forth d-flex align-items-center ftco-animate" data-scrollax="properties: { translateY: '70%' }">
 							<div class="text" style="text-align: center;">
 								<h4 style="margin-bottom: 0;"><b>Hello..!</b></h4>
-								<h1 class="mb-4 mt-3" style="font-size: 32px;">I'm <span>Uttam Kumar Varma
-										Vummididevu</span></h1>
+								<h1 class="mb-4 mt-3" style="font-size: 32px;">I'm <span>Uttam Kumar Varma Vummididevu</span></h1>
 								<h2 style="margin-bottom: 0;"><b>Software Test Engineer</b></h2>
-
-								<!-- Block to maintain space for typing animation -->
+								<h2></h2>
+	
 								<div id="typing-container"
 									style="height: 2.5em; overflow: hidden; line-height: 2.5em; position: relative;">
 									<span id="typing-animation"
 										style="opacity: 1; transition: opacity 0.5s; font-weight: normal; color: #00ffae;"></span>
 								</div>
-
+	
 								<script>
 									const typingAnimationElement = document.getElementById('typing-animation');
-
+	
 									const typingTexts = [
 										'Manual Testing  ',
 										'Automation Testing  ',
@@ -226,67 +225,61 @@
 										'Database Testing   ',
 										'Security Testing   ',
 									];
-
+	
 									let currentTextIndex = 0;
-
+	
 									function typeText(text) {
 										let index = 0;
-										const typingSpeed = 75; // Speed of typing (ms)
-
-										typingAnimationElement.style.opacity = 1; // Ensure it's fully visible
-
+										const typingSpeed = 75;
+	
+										typingAnimationElement.style.opacity = 1;
+	
 										function typeNextCharacter() {
 											if (index < text.length) {
 												typingAnimationElement.textContent = text.substring(0, index + 1);
 												index++;
 												setTimeout(typeNextCharacter, typingSpeed);
 											} else {
-												// Pause after finishing typing
 												setTimeout(() => {
 													fadeOutText(text);
-												}, 1000); // Pause after typing (ms)
+												}, 1000);
 											}
 										}
-
+	
 										typeNextCharacter();
 									}
-
+	
 									function fadeOutText(text) {
-										typingAnimationElement.style.transition = "opacity 0.5s"; // Fade-out transition
+										typingAnimationElement.style.transition = "opacity 0.5s";
 										typingAnimationElement.style.opacity = 0;
-
-										// Once faded out, erase the text and move to the next
+	
 										setTimeout(() => {
 											eraseText(text);
-										}, 500); // Time for fade-out to complete (ms)
+										}, 500);
 									}
-
+	
 									function eraseText(text) {
 										let eraseIndex = text.length;
-										const eraseSpeed = 50; // Speed of erasing (ms)
-
+										const eraseSpeed = 50;
+	
 										function eraseNextCharacter() {
 											if (eraseIndex > 0) {
 												typingAnimationElement.textContent = text.substring(0, eraseIndex - 1);
 												eraseIndex--;
 												setTimeout(eraseNextCharacter, eraseSpeed);
 											} else {
-												// Move to the next text
 												currentTextIndex = (currentTextIndex + 1) % typingTexts.length;
-												typingAnimationElement.style.opacity = 1; // Make it visible again
-												typeText(typingTexts[currentTextIndex]); // Type the next text
+												typingAnimationElement.style.opacity = 1;
+												typeText(typingTexts[currentTextIndex]);
 											}
 										}
-
+	
 										eraseNextCharacter();
 									}
-
-									// Start typing the first text
+	
 									typeText(typingTexts[currentTextIndex]);
 								</script>
-
-
-
+	
 								<div style="margin-top: 30px;">
 									<a href="UttamKumarVarmaVummididevu_Resume.pdf" class="btn custom-hover btn-fixed-size" download>Resume</a>
 									<span class="dot" style="color: black;">•</span>
@@ -294,42 +287,35 @@
 									<span class="dot" style="color: black;">•</span>
 									<a href="https://github.com/UttamKumarVarma?tab=repositories" class="btn custom-hover btn-fixed-size" download>GitHub</a>
 								</div>
-								
+	
 								<style>
-									/* Set initial color and background for buttons */
 									.custom-hover {
-										background-color: #00ffae; /* Primary button color */
+										background-color: #00ffae;
 										color: black;
 										border: 7px solid #00ffae;
 										transition: background-color 0.01s ease, color 0.01s ease;
 									}
-								
-									/* Hover effect to change background to white and text color to black */
+	
 									.custom-hover:hover {
 										background-color: white !important;
 										color: black !important;
 										border-color: white !important;
 									}
-								
-									/* Set a fixed width for uniform button size */
+	
 									.btn-fixed-size {
-										width: 120px; /* Adjust as needed for consistent size */
-										text-align: center; /* Center-align text within buttons */
+										width: 120px;
+										text-align: center;
 									}
 								</style>
-								
-								
-
+	
 							</div>
-
-
-
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+	
 
 
 
@@ -776,14 +762,6 @@
 
 	<section class="ftco-section ftco-no-pb" id="experience-section">
 		<div class="container">
-			<!-- <div class="row justify-content-center pb-5 text-center">
-				<div class="col-md-12 heading-section ftco-animate">
-					<h1 class="big text-center">Experience</h1>
-					<h2 class="mb-4 text-center">Experience</h2>
-					<div class="underline"></div>
-				</div>
-			</div> -->
-
 			<div class="row justify-content-center mb-4 pb-4">
 				<div class="col-md-7 heading-section text-center ftco-animate">
 					<h1 class="big big-2">Experience</h1>
@@ -791,280 +769,113 @@
 					<div class="underline" style="margin-top: 10px;"></div>
 				</div>
 			</div>
-			
-
-			<!-- <div class="row">
-				<h1 class="big-4">Experience</h1>
-				<h1 class="big">Experience</h1>
-				<div class="underline"></div>
-			</div> -->
-
+	
 			<div class="row">
 				<div class="col-md-6">
 					<div class="resume-wrap ftco-animate" style="text-align: justify;">
 						<span class="date"><b>September 2022-July 2023</b></span>
 						<h2>Test Automation Engineer</h2>
 						<span class="position">ZenQ - A Qualitest Company</span>
-
-						<style>
-							.resume-wrap {
-								transition: box-shadow 0.3s ease;
-								/* Smooth transition for box shadow */
-								border: 1px solid transparent;
-								/* Optional: make sure there's a border */
-							}
-
-							.resume-wrap:hover {
-								box-shadow: 0 0 10px #00ffae, 0 0 20px #00ffae;
-								/* Glowing effect */
-							}
-
-							.custom-list {
-								list-style-type: none;
-								/* Removes bullet points */
-								padding-left: 0;
-								/* Removes default padding */
-								margin-top: 10px;
-								/* Adds space between position and list */
-								text-align: justify;
-								/* Justifies the text */
-							}
-
-							.custom-list li {
-								margin-bottom: 10px;
-								/* Adds space between each list item */
-								text-align: justify;
-								/* Justifies the text in the list items */
-								padding-left: 20px;
-								/* Indentation for list items */
-								padding-right: 20px;
-								/* Optional: Adds padding on the right for even look */
-							}
-
-							.centered-list {
-								list-style-type: none;
-								/* Removes bullet points */
-								padding-left: 0;
-								/* Removes default padding */
-								margin-top: 20px;
-								/* Adds space between the sections */
-								text-align: justify;
-								/* Justifies the text */
-							}
-
-							.centered-list li {
-								margin-bottom: 10px;
-								/* Adds space between each list item */
-								text-align: justify;
-								/* Justifies the text in the list items */
-								padding-left: 20px;
-								/* Indentation for list items */
-								padding-right: 20px;
-								/* Optional: Adds padding on the right for even look */
-							}
-						</style>
-
+	
 						<ul class="custom-list">
 							<li>Project: NIAD Systems, QA Engineer</li>
-							<li>Project Description: NIAD is a cutting-edge platform, for managing issues that is mainly
-								utilized in Syndication and Equity Capital Markets. It streamlines new issue processes
-								to boost efficiency and improve business profitability.</li>
+							<li>Project Description: NIAD is a cutting-edge platform, for managing issues that is mainly utilized in Syndication and Equity Capital Markets. It streamlines new issue processes to boost efficiency and improve business profitability.</li>
 						</ul>
-
+	
 						<ul>
-							<li>Developed automated tests utilizing Selenium, C#, and SpecFlow to ensure comprehensive
-								and reliable test coverage across functionalities.</li>
-							<li>Updated project framework for improved efficiency, resulting in a further 20% reduction
-								in testing time required.</li>
-							<li>Verified that API requests and responses met the specifications, including response
-								body, status codes, headers, and data formats.</li>
-							<li>Implemented parallel testing using 8 threads, significantly reducing the overall testing
-								duration and enhancing test execution efficiency.</li>
-							<li>Verified each requirement and executed Equivalence Class Partitioning, Boundary Value
-								Analysis, Decision Table, and State Transition test cases.</li>
+							<li>Developed automated tests utilizing Selenium, C#, and SpecFlow to ensure comprehensive and reliable test coverage across functionalities.</li>
+							<li>Updated project framework for improved efficiency, resulting in a further 20% reduction in testing time required.</li>
+							<li>Verified that API requests and responses met the specifications, including response body, status codes, headers, and data formats.</li>
+							<li>Implemented parallel testing using 8 threads, significantly reducing the overall testing duration and enhancing test execution efficiency.</li>
+							<li>Verified each requirement and executed Equivalence Class Partitioning, Boundary Value Analysis, Decision Table, and State Transition test cases.</li>
 						</ul>
 					</div>
 				</div>
-
-
-
+	
 				<div class="col-md-6">
 					<div class="resume-wrap ftco-animate" style="text-align: justify;">
 						<span class="date"><b>March 2022-September 2022</b></span>
 						<h2>Test Automation Engineer</h2>
 						<span class="position">ZenQ - A Qualitest Company</span>
-
-						<style>
-							.resume-wrap {
-								transition: box-shadow 0.3s ease;
-								/* Smooth transition for box shadow */
-								border: 1px solid transparent;
-								/* Optional: make sure there's a border */
-							}
-
-							.resume-wrap:hover {
-								box-shadow: 0 0 10px #00ffae, 0 0 20px #00ffae;
-								/* Glowing effect */
-							}
-
-							.custom-list {
-								list-style-type: none;
-								/* Removes bullet points */
-								padding-left: 0;
-								/* Removes default padding */
-								margin-top: 10px;
-								/* Adds space between position and list */
-								text-align: justify;
-								/* Justifies the text */
-							}
-
-							.custom-list li {
-								margin-bottom: 10px;
-								/* Adds space between each list item */
-								text-align: justify;
-								/* Justifies the text in the list items */
-								padding-left: 20px;
-								/* Indentation for list items */
-								padding-right: 20px;
-								/* Optional: Adds padding on the right for even look */
-							}
-
-							.centered-list {
-								list-style-type: none;
-								/* Removes bullet points */
-								padding-left: 0;
-								/* Removes default padding */
-								margin-top: 20px;
-								/* Adds space between the sections */
-								text-align: justify;
-								/* Justifies the text */
-							}
-
-							.centered-list li {
-								margin-bottom: 10px;
-								/* Adds space between each list item */
-								text-align: justify;
-								/* Justifies the text in the list items */
-								padding-left: 20px;
-								/* Indentation for list items */
-								padding-right: 20px;
-								/* Optional: Adds padding on the right for even look */
-							}
-						</style>
-
+	
 						<ul class="custom-list">
 							<li>Project: Technical Toolboxes, QA Engineer</li>
-							<li>Project Description: Technical Toolboxes is a known provider of comprehensive pipeline
-								software and technical training, for professionals in pipeline engineering.</li>
+							<li>Project Description: Technical Toolboxes is a known provider of comprehensive pipeline software and technical training, for professionals in pipeline engineering.</li>
 						</ul>
-
+	
 						<ul>
-							<li>Independently carried out all tasks related to Automated Test Scripts and Test Data,
-								ensuring the optimal performance of software.</li>
-							<li>Collaborated with stakeholders to perform User Acceptance Testing (UAT), ensuring the
-								software meets business requirements and achieved 100% client satisfaction rate.</li>
-							<li>Conducted smoke testing to ensure that the critical functionalities of the application
-								were working after each build or deployment.</li>
-							<li>Updated automated test suites, identifying gaps in test coverage and implementing
-								improvements to enhance testing efficiency.</li>
-							<li>Actively participated in Retrospective Meetings, contributing valuable insights to
-								refine processes and enhance the overall quality of the application.</li>
+							<li>Independently carried out all tasks related to Automated Test Scripts and Test Data, ensuring the optimal performance of software.</li>
+							<li>Collaborated with stakeholders to perform User Acceptance Testing (UAT), ensuring the software meets business requirements and achieved 100% client satisfaction rate.</li>
+							<li>Conducted smoke testing to ensure that the critical functionalities of the application were working after each build or deployment.</li>
+							<li>Updated automated test suites, identifying gaps in test coverage and implementing improvements to enhance testing efficiency.</li>
+							<li>Actively participated in Retrospective Meetings, contributing valuable insights to refine processes and enhance the overall quality of the application.</li>
 						</ul>
 					</div>
 				</div>
-
-
+	
 				<div class="col-md-6 mx-auto"> <!-- Add mx-auto to center horizontally -->
 					<div class="resume-wrap ftco-animate" style="text-align: justify;">
 						<span class="date"><b>February 2021-March 2022</b></span>
 						<h2>Test Automation Engineer</h2>
 						<span class="position">ZenQ - A Qualitest Company</span>
-
-						<style>
-							.resume-wrap {
-								transition: box-shadow 0.3s ease;
-								/* Smooth transition for box shadow */
-								border: 1px solid transparent;
-								/* Optional: make sure there's a border */
-							}
-
-							.resume-wrap:hover {
-								box-shadow: 0 0 10px #00ffae, 0 0 20px #00ffae;
-								/* Glowing effect */
-							}
-
-							.custom-list {
-								list-style-type: none;
-								/* Removes bullet points */
-								padding-left: 0;
-								/* Removes default padding */
-								margin-top: 10px;
-								/* Adds space between position and list */
-								text-align: justify;
-								/* Justifies the text */
-							}
-
-							.custom-list li {
-								margin-bottom: 10px;
-								/* Adds space between each list item */
-								text-align: justify;
-								/* Justifies the text in the list items */
-								padding-left: 20px;
-								/* Indentation for list items */
-								padding-right: 20px;
-								/* Optional: Adds padding on the right for even look */
-							}
-
-							.centered-list {
-								list-style-type: none;
-								/* Removes bullet points */
-								padding-left: 0;
-								/* Removes default padding */
-								margin-top: 20px;
-								/* Adds space between the sections */
-								text-align: justify;
-								/* Justifies the text */
-							}
-
-							.centered-list li {
-								margin-bottom: 10px;
-								/* Adds space between each list item */
-								text-align: justify;
-								/* Justifies the text in the list items */
-								padding-left: 20px;
-								/* Indentation for list items */
-								padding-right: 20px;
-								/* Optional: Adds padding on the right for even look */
-							}
-						</style>
-
+	
 						<ul class="custom-list">
 							<li>Project: Asset Vantage, QA Engineer</li>
-							<li>Project Description: Asset Vantage offers a cloud-based software platform, for managing
-								assets handling accounting tasks and generating reports. It offers services to
-								individual wealthy families as well as professionals.</li>
+							<li>Project Description: Asset Vantage offers a cloud-based software platform, for managing assets handling accounting tasks and generating reports. It offers services to individual wealthy families as well as professionals.</li>
 						</ul>
-
+	
 						<ul>
-							<li>Developed and managed Automation Test Scripts utilizing Selenium WebDriver, Java, and
-								JUnit to conduct thorough quality testing in support of client services.</li>
-							<li>Worked closely with developers to understand changes in code and their impact on
-								testing, ensuring timely identification of issues.</li>
-							<li>Performed end-to-end testing to validate the entire workflow of the application,
-								ensuring all integrated components worked together as expected.</li>
-							<li>Updated automated test suites, identifying gaps in test coverage and implementing
-								improvements to enhance testing efficiency.</li>
-							<li>Analyzed and promptly communicated test results to facilitate the resolution of
-								identified defects, ensuring the application’s quality is maintained.</li>
+							<li>Developed and managed Automation Test Scripts utilizing Selenium WebDriver, Java, and JUnit to conduct thorough quality testing in support of client services.</li>
+							<li>Worked closely with developers to understand changes in code and their impact on testing, ensuring timely identification of issues.</li>
+							<li>Performed end-to-end testing to validate the entire workflow of the application, ensuring all integrated components worked together as expected.</li>
+							<li>Updated automated test suites, identifying gaps in test coverage and implementing improvements to enhance testing efficiency.</li>
+							<li>Analyzed and promptly communicated test results to facilitate the resolution of identified defects, ensuring the application’s quality is maintained.</li>
 						</ul>
 					</div>
 				</div>
-
 			</div>
-
-
 		</div>
+	
+		<style>
+			.resume-wrap {
+				transition: box-shadow 0.3s ease;
+				border: 1px solid transparent;
+			}
+	
+			.resume-wrap:hover {
+				box-shadow: 0 0 10px #00ffae, 0 0 20px #00ffae; /* Glowing effect */
+			}
+	
+			.custom-list {
+				list-style-type: none;
+				padding-left: 0;
+				margin-top: 10px;
+				text-align: justify;
+			}
+	
+			.custom-list li {
+				margin-bottom: 10px;
+				text-align: justify;
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+	
+			.centered-list {
+				list-style-type: none;
+				padding-left: 0;
+				margin-top: 20px;
+				text-align: justify;
+			}
+	
+			.centered-list li {
+				margin-bottom: 10px;
+				text-align: justify;
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+		</style>
 	</section>
+	
 
 
 	<section class="ftco-section ftco-no-pb" id="education-section"></section>
@@ -1430,7 +1241,7 @@
 					<div class="underline" style="margin-top: 10px;"></div>
 				</div>
 			</div>
-	
+		
 			<div class="row d-flex contact-info mb-5">
 				<div class="col-md-6 col-lg-4 d-flex ftco-animate">
 					<div class="align-self-stretch box p-4 text-center">
@@ -1459,32 +1270,35 @@
 						<p><a href="tel:+13142034984">+ 1 (314) 203-4984</a></p>
 					</div>
 				</div>
-				
-				
 			</div>
-	
-			<!-- <div class="container">
-				<br><br>
-				<div class="row justify-content-center">
-					<div class="col-md-7 ftco-animate text-center">
-						<h2>Have a<span> Question? </span>
-							<a href="https://forms.gle/uLaTShUKXraAvHJ77" class="btn btn-primary py-3 px-5">Click Here</a>
-						</h2>
-					</div>
-				</div>
-				<br>
-				<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-					<li class="ftco-animate normal-txt">Find me on </li>
-					<li class="ftco-animate"><a href="https://www.youtube.com/@RishabhMishraOfficial"><span class="icon-youtube"></span></a></li>
-					<li class="ftco-animate"><a href="https://www.linkedin.com/in/rishabhnmishra/"><span class="icon-linkedin"></span></a></li>
-					<li class="ftco-animate"><a href="https://twitter.com/rishabhnmishra"><span class="icon-twitter"></span></a></li>
-					<li class="ftco-animate"><a href="https://twitter.com/rishabhnmishra"><span class="icon-facebook"></span></a></li>
-					<li class="ftco-animate"><a href="https://www.instagram.com/rishabhnmishra/"><span class="icon-instagram"></span></a></li>
-				</ul>
-				<br>
-			</div> -->
 		</div>
 	</section>
+	
+	<style>
+		/* Mobile-Friendly Design */
+		@media (max-width: 768px) {
+			.contact-info .col-md-6 {
+				width: 100%;
+				margin-bottom: 20px;
+			}
+			.contact-info .box {
+				padding: 15px;
+				text-align: center;
+			}
+		}
+	
+		/* General Styling for the Contact Section */
+		.contact-info .box {
+			border: 2px solid #000; /* Change border color to black */
+			border-radius: 8px;
+			transition: all 0.3s ease;
+		}
+	
+		.contact-info .box:hover {
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Change shadow to match black theme */
+		}
+	</style>
+	
 	
 	<style>
 		.contact-info .col-lg-4 {
