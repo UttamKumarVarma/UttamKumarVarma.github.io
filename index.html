@@ -124,7 +124,8 @@
 				<a class="navbar-brand" href="index.html">Uttam Kumar Varma Vummididevu</a>
 				<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
 					data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="oi oi-menu"></span> Menu
+					<span class="oi oi-menu" style="color: #00ffae;"></span> 
+					<span style="color: #00ffae;">Menu</span>
 				</button>
 			</div>
 	
@@ -184,8 +185,39 @@
 					width: 100%; /* Make buttons full width on mobile */
 				}
 			}
+	
+			@media (max-width: 1024px) {
+				.navbar-brand {
+					display: none;
+				}
+			}
+	
+			@media (max-width: 1024px) {
+				/* Add some space above the menu button for mobile and iPad views */
+				.navbar-toggler {
+					margin-top: 25px; /* Adjust the value as needed */
+					margin-block: 15px; /* Adjust the value as needed */
+				}
+			}
 		</style>
 	</div>
+	
+	<script>
+		// Collapse the menu after clicking on a link
+		document.addEventListener('DOMContentLoaded', () => {
+			const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+			const navbarCollapse = document.getElementById('ftco-nav');
+	
+			navLinks.forEach(link => {
+				link.addEventListener('click', () => {
+					if (navbarCollapse.classList.contains('show')) {
+						navbarCollapse.classList.remove('show'); // Close the menu
+					}
+				});
+			});
+		});
+	</script>
+	
 	
 	<section id="home-section" class="hero">
 		<div class="home-slider owl-carousel">
@@ -306,6 +338,18 @@
 										width: 120px;
 										text-align: center;
 									}
+
+									@media (max-width: 1024px) {
+										.slider-item .one-third .overlay + div {
+											display: none;
+										}
+									}
+
+									@media (max-width: 768px) {
+       									.custom-hover {
+            								margin-bottom: 10px; /* Add spacing below buttons */
+        								}
+    								}
 								</style>
 	
 							</div>
@@ -685,6 +729,27 @@
 
 							<!-- Add this CSS to your existing stylesheet or in a <style> tag -->
 							<style>
+								@media (max-width: 1024px) { /* Adjust for screens smaller than 768px */
+									.about-info {
+										padding: 0; /* Remove extra padding */
+									}
+								
+									.about-info li {
+										display: flex;
+										justify-content: space-between;
+										padding: 5px 0; /* Reduce spacing between list items */
+										font-size: 14px; /* Adjust text size for better readability */
+									}
+								
+									.about-info li span:first-child {
+										font-weight: bold; /* Highlight the label */
+									}
+								
+									.about-info li span:last-child {
+										text-align: left; /* Align the value to the right */
+									}
+								}
+								
 								/* Styling for the heading and about section */
 								.heading-section h1.big {
 									font-size: 3rem;
@@ -736,6 +801,9 @@
 										margin-bottom: 5px;
 									}
 								}
+								#about-section {
+									margin-left: 16px; /* Adjust the value to move it further right */
+								}								
 							</style>
 
 						</div>
@@ -837,6 +905,55 @@
 		</div>
 	
 		<style>
+			@media (max-width: 1024px) { /* Target iPad and smaller screens */
+				.resume-wrap {
+					display: flex; /* Enable flexbox for alignment */
+					flex-direction: column; /* Stack elements vertically */
+					justify-content: space-between; /* Space out content evenly */
+					height: 100%; /* Allow height adjustment */
+					min-height: 400px; /* Set a minimum height for consistency */
+				}
+			
+				.col-md-6 {
+					display: flex;
+					flex-direction: column;
+					justify-content: stretch;
+					align-items: stretch;
+				}
+			
+				.resume-wrap span,
+				.resume-wrap h2,
+				.resume-wrap ul {
+					flex: 0; /* Make all children of .resume-wrap evenly spaced */
+				}
+			
+				.row {
+					display: flex;
+					flex-wrap: wrap;
+					align-items: stretch; /* Ensure rows align uniformly */
+				}
+			}
+			
+
+			@media (max-width: 1024px) { /* Target screens smaller than 768px */
+				.resume-wrap {
+					text-align: left !important; /* Force text alignment to left */
+					padding-left: 15px; /* Add left padding */
+					padding-right: 15px; /* Optional: Add right padding */
+				}
+			
+				.custom-list, .centered-list {
+					text-align: left !important; /* Ensure lists are left-aligned */
+					padding-left: 20px; /* Add spacing from the container edge */
+					margin-left: 0; /* Remove any default margins */
+				}
+			
+				.custom-list li, .centered-list li {
+					text-align: left !important; /* Ensure individual items align left */
+					padding-left: 0; /* Remove internal padding */
+				}
+			}
+			
 			.resume-wrap {
 				transition: box-shadow 0.3s ease;
 				border: 1px solid transparent;
@@ -1001,13 +1118,13 @@
 			<div class="row d-flex justify-content-center">
 				<div class="col-md-4 d-flex ftco-animate">
 					<div class="blog-entry justify-content-end">
-						<a href="https://github.com/UttamKumarVarma/PythonSeleniumFramework"
+						<a href="https://github.com/UttamKumarVarma/PythonSelenium_PytestProject"
 							class="block-20 zoom-effect" style="background-image: url('images/Screenshot 2024-10-29 at 11.05.34 PM.png');">
 						</a>
 						<div class="text mt-3 float-right d-block">
 
 							<h3 class="heading"><a
-									href="https://github.com/UttamKumarVarma/PythonSeleniumFramework">ProtoCommerce
+									href="https://github.com/UttamKumarVarma/PythonSelenium_PytestProject">Python Selenium Framework for Rahul Shetty Website 
 								</a></h3>
 									<!-- <p><strong>Key Achievements and Responsibilities:</strong></p> -->
 									<style>
@@ -1017,7 +1134,7 @@
 									  </style>
 									  
 									  <ul class="justified-list">
-										<li>Built a robust Python Selenium framework for ProtoCommerce, supporting end-to-end automation with structured modular components to maximize code reusability and maintainability.</li>
+										<li>Built a robust Python Selenium framework for Rahul Shetty website, supporting end-to-end automation with structured modular components to maximize code reusability and maintainability.</li>
 										<li>Configured browser properties and dynamic waits to optimize testing performance and stability across varied test scenarios and environments.</li>
 										<li>Implemented advanced exception handling and comprehensive error logging to ensure smooth execution and rapid debugging.</li>
 									  </ul>																		
@@ -1070,7 +1187,7 @@
 						<div class="text mt-3 float-right d-block">
 
 							<h3 class="heading"><a
-								<h3><a href="https://drive.google.com/file/d/1syp2u0UOIy0nfBCTX5bPcMzWvFLRrmG0/view">ISTQB - CTFL</a> <span style="color: black;">••••••••••••••••••••••••••</span></h3>
+								<h3><a href="https://drive.google.com/file/d/1syp2u0UOIy0nfBCTX5bPcMzWvFLRrmG0/view">ISTQB - CTFL</a> <span style="color: black;">••••••••••••••••••••••••••••</span></h3>
 						</div>
 					</div>
 				</div>
@@ -1110,7 +1227,7 @@
 						<div class="text mt-3 float-right d-block">
 
 							<h3 class="heading"><a
-									href="https://drive.google.com/file/d/1m4vsehh1gWJTgfjslMCFbi1WdBSrk1Wk/view?usp=sharing">Project Management - Excelerate</a> <span style="color: black;">•</span></h3>
+									href="https://drive.google.com/file/d/1m4vsehh1gWJTgfjslMCFbi1WdBSrk1Wk/view?usp=sharing">Project Management - Excelerate</a> <span style="color: black;">•••••••</span></h3>
 						</div>
 					</div>
 				</div>
@@ -1138,180 +1255,237 @@
 						</div>
 					</div>
 				</div>
+
+
+				
+				<style>
+					/* Default - No fixed size for larger screens */
+.block-20 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Mobile devices - less than 768px */
+@media (max-width: 768px) {
+    .block-20 {
+        width: 100%;
+        height: 200px; /* Set a uniform height for mobile */
+        border-radius: 8px; /* Optional: For better visuals */
+    }
+}
+
+/* iPads & similar mid-sized tablets - between 768px and 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .block-20 {
+        width: 100%;
+        height: 220px; /* Slightly larger size for iPads and iPad Pro views */
+        border-radius: 8px; /* Optional */
+    }
+}
+
+
+				</style>
 			</div>
 		</div>
 	</section>
 
 	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
 		<div class="container">
-			<div class="row d-md-flex align-items-center">
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-				  <div class="block-18">
-					<div class="text">
-					  <strong class="number" data-number="150">0</strong> 
-					  <span>Bugs Found</span>
-					</div>
-				  </div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-				  <div class="block-18">
-					<div class="text">
-					  <strong class="number" data-number="30">0</strong>
-					  <span>Skills</span>
-					</div>
-				  </div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-				  <div class="block-18">
-					<div class="text">
-					  <strong class="number" data-number="150">0</strong>
-					  <span>Test Scripts Developed</span>
-					</div>
-				  </div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-				  <div class="block-18">
-					<div class="text">
-					  <strong class="number" data-number="100">0</strong>
-					  <span>Client Satisfaction</span>
-					</div>
-				  </div>
+		  <div class="row d-md-flex align-items-center">
+			<!-- First Counter -->
+			<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+			  <div class="block-18">
+				<div class="text">
+				  <strong class="number" data-number="150">0</strong> 
+				  <span>Bugs Found</span>
 				</div>
 			  </div>
-			  
-			  <script>
-				document.addEventListener("DOMContentLoaded", function() {
-				  // Observer to monitor each number's change
-				  const observer = new MutationObserver(() => {
-					document.querySelectorAll('.number').forEach(el => {
-					  const finalValue = el.getAttribute('data-number');
-					  
-					  // Check if the current text content matches the data-number attribute
-					  if (el.textContent === finalValue) {
-						if (el.dataset.number === "100") {
-						  // For Cups of coffee, add %
-						  if (!el.textContent.includes('%')) {
-							el.textContent += '%'; 
-						  }
-						} else {
-						  // For others, add +
-						  if (!el.textContent.includes('+')) {
-							el.textContent += '+';
-						  }
-						}
+			</div>
+			<!-- Second Counter -->
+			<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+			  <div class="block-18">
+				<div class="text">
+				  <strong class="number" data-number="30">0</strong>
+				  <span>Skills</span>
+				</div>
+			  </div>
+			</div>
+			<!-- Third Counter -->
+			<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+			  <div class="block-18">
+				<div class="text">
+				  <strong class="number" data-number="150">0</strong>
+				  <span>Test Scripts Developed</span>
+				</div>
+			  </div>
+			</div>
+			<!-- Fourth Counter -->
+			<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+			  <div class="block-18">
+				<div class="text">
+				  <strong class="number" data-number="100">0</strong>
+				  <span>Client Satisfaction</span>
+				</div>
+			  </div>
+			</div>
+		  </div>
+	  
+		  <!-- Custom CSS for different device sizes -->
+		<style>
+			/* Base font sizes */
+			.ftco-counter .number {
+			  font-size: 24px;
+			  color: #333;
+			  font-weight: bold;
+			  transition: all 0.3s ease-in-out;
+			}
+	  
+			.ftco-counter span {
+			  display: block;
+			  font-size: 16px;
+			  color: #555;
+			}
+	  
+			/* Responsive adjustments for tablets (iPad view) */
+			@media (min-width: 768px) and (max-width: 1024px) {
+			  .ftco-counter .number {
+				font-size: 28px;
+			  }
+	  
+			  .ftco-counter span {
+				font-size: 18px;
+			  }
+			}
+	  
+			/* Responsive adjustments for iPad Pro view */
+			@media (min-width: 1025px) and (max-width: 1366px) {
+			  .ftco-counter .number {
+				font-size: 32px;
+			  }
+	  
+			  .ftco-counter span {
+				font-size: 20px;
+			  }
+			}
+	  
+			/* Further mobile adjustments for smaller screens */
+			@media (max-width: 767px) {
+			  .ftco-counter .number {
+				font-size: 20px;
+			  }
+	  
+			  .ftco-counter span {
+				font-size: 14px;
+			  }
+			}
+		</style>
+	  
+		  <!-- JavaScript Logic -->
+		  <script>
+			document.addEventListener("DOMContentLoaded", function() {
+			  const observer = new MutationObserver(() => {
+				document.querySelectorAll('.number').forEach(el => {
+				  const finalValue = el.getAttribute('data-number');
+				  
+				  if (el.textContent === finalValue) {
+					if (el.dataset.number === "100") {
+					  if (!el.textContent.includes('%')) {
+						el.textContent += '%';
 					  }
-					});
-				  });
-			  
-				  // Apply observer to each .number element
-				  document.querySelectorAll('.number').forEach(el => {
-					observer.observe(el, { childList: true });
-				  });
+					} else {
+					  if (!el.textContent.includes('+')) {
+						el.textContent += '+';
+					  }
+					}
+				  }
 				});
-			  </script>
-			  
-			  
-			  
+			  });
+	  
+			  document.querySelectorAll('.number').forEach(el => {
+				observer.observe(el, { childList: true });
+			  });
+			});
+		  </script>
 		</div>
-
-		<div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-			<!-- <div class="container"> -->
-			<div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2>More projects on<span> Github </span> </h2>
-					<div class="heading">
-						<h4><b> I love to develop, debug, &amp; execute test scripts </b> </h4>
-						<br>
-						<p><a href="https://github.com/UttamKumarVarma?tab=repositories" class="btn custom-hover btn-fixed-size" download>GitHub</a></p>
-					</div>
-				</div>
-			</div>
-			<!-- </div> -->
-		</div>
-	</section>
+	 </section>
 
 
 
-	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+	  <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
 		<div class="container">
-			<div class="row justify-content-center mb-5 pb-3">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Contact</h1>
-					<h2 class="mb-4">Contact Me</h2>
-					<div class="underline" style="margin-top: 10px;"></div>
-				</div>
+		  <div class="row justify-content-center mb-5 pb-3">
+			<div class="col-md-7 heading-section text-center ftco-animate">
+			  <h1 class="big big-2">Contact</h1>
+			  <h2 class="mb-4">Contact Me</h2>
+			  <div class="underline" style="margin-top: 10px;"></div>
 			</div>
-		
-			<div class="row d-flex contact-info mb-5">
-				<div class="col-md-6 col-lg-4 d-flex ftco-animate">
-					<div class="align-self-stretch box p-4 text-center">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-map-signs"></span>
-						</div>
-						<h3 class="mb-4">Address</h3>
-						<p><a>St. Louis, MO, USA</a></p>
-					</div>
+		  </div>
+	  
+		  <div class="row contact-info mb-5">
+			<!-- Address Section -->
+			<div class="col-lg-4 col-md-6 d-flex ftco-animate">
+			  <div class="align-self-stretch box p-4 text-center">
+				<div class="icon d-flex align-items-center justify-content-center">
+				  <span class="icon-map-signs"></span>
 				</div>
-				<div class="col-md-6 col-lg-4 d-flex ftco-animate">
-					<div class="align-self-stretch box p-4 text-center">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-paper-plane"></span>
-						</div>
-						<h3 class="mb-4">Email Address</h3>
-						<p><a href="mailto:uttamkumarvarma.vummididevu@slu.edu" class="email-text">uttamkumarvarma.vummididevu@slu.edu</a></p>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 d-flex ftco-animate">
-					<div class="align-self-stretch box p-4 text-center">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-phone2"></span>
-						</div>
-						<h3 class="mb-4">Contact Number</h3>
-						<p><a href="tel:+13142034984">+ 1 (314) 203-4984</a></p>
-					</div>
-				</div>
+				<h3 class="mb-4">Address</h3>
+				<p><a>St. Louis, MO, USA</a></p>
+			  </div>
 			</div>
+			
+			<!-- Email Section -->
+			<div class="col-lg-4 col-md-6 d-flex ftco-animate">
+			  <div class="align-self-stretch box p-4 text-center">
+				<div class="icon d-flex align-items-center justify-content-center">
+				  <span class="icon-paper-plane"></span>
+				</div>
+				<h3 class="mb-4">Email Address</h3>
+				<p><a href="mailto:uvummididevu@slu.edu" class="email-text">uvummididevu@slu.edu</a></p>
+			  </div>
+			</div>
+			
+			<!-- Contact Number Section -->
+			<div class="col-lg-4 col-md-6 d-flex ftco-animate">
+			  <div class="align-self-stretch box p-4 text-center">
+				<div class="icon d-flex align-items-center justify-content-center">
+				  <span class="icon-phone2"></span>
+				</div>
+				<h3 class="mb-4">Contact Number</h3>
+				<p><a href="tel:+13142034984">+ 1 (314) 203-4984</a></p>
+			  </div>
+			</div>
+		  </div>
 		</div>
-	</section>
-	
-	<style>
-		/* Mobile-Friendly Design */
-		@media (max-width: 768px) {
-			.contact-info .col-md-6 {
-				width: 100%;
-				margin-bottom: 20px;
-			}
-			.contact-info .box {
-				padding: 15px;
-				text-align: center;
-			}
+	  </section>
+	  
+	  <style>
+	  /* Default desktop view */
+	  .contact-info .col-lg-4 {
+		flex: 0 0 33.333%;
+		max-width: 33.333%;
+	  }
+	  
+	  /* Stack items vertically only for mobile screens */
+	  @media (max-width: 768px) {
+		.contact-info {
+		  display: flex;
+		  flex-direction: column; /* Stack vertically only on mobile screens */
+		  gap: 10px;
 		}
-	
-		/* General Styling for the Contact Section */
-		.contact-info .box {
-			border: 2px solid #000; /* Change border color to black */
-			border-radius: 8px;
-			transition: all 0.3s ease;
-		}
-	
-		.contact-info .box:hover {
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Change shadow to match black theme */
-		}
-	</style>
-	
-	
-	<style>
+	  
 		.contact-info .col-lg-4 {
-			flex: 1;
-			max-width: 33.333%;
+		  max-width: 100%;
+		  flex: 1;
 		}
+	  
 		.contact-info .box {
-			height: 100%;
+		  width: 100%; /* Stretch to full width on small screens */
+		  padding: 15px;
 		}
-		.email-text {
-			word-break: break-word;
-		}
-	</style>
+	  }
+	  </style>
+	  
 	
 
 
